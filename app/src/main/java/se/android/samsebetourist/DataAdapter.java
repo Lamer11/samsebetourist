@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
@@ -41,7 +42,7 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
         final TextView country;
         ViewHolder(View view){
             super(view);
-            country = (TextView) view.findViewById(R.id.country);
+            country = (Button) view.findViewById(R.id.country);
         }
     }
 }

@@ -36,11 +36,11 @@ public class Countries extends AppCompatActivity {
 
 
     private void fillCountriesTank(){
-        listik.add("Russia");
-        listik.add("Germany");
-        listik.add("Spanish");
-        listik.add("Spanish");
-        listik.add("Spanish");
+        listik.add("ИСПАНИЯ");
+        listik.add("ПОРТУГАЛИЯ");
+        listik.add("ГЕРМАНИЯ");
+        listik.add("РОССИЯ");
+        listik.add("ЧЕХИЯ");
         listik.add("Spanish");
         listik.add("Spanish");
         listik.add("Spanish");
