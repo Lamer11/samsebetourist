@@ -4,7 +4,6 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
@@ -14,9 +13,9 @@ import java.util.List;
 public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
 
     private LayoutInflater inflater;
-    private List<String> countries;
+    private List<ObjectCountry> countries;
 
-    DataAdapter(Context context, List<String> countries) {
+    DataAdapter(Context context, List<ObjectCountry> countries) {
         this.countries = countries;
         this.inflater = LayoutInflater.from(context);
     }
@@ -29,8 +28,9 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(DataAdapter.ViewHolder holder, int position) {
-        String country = countries.get(position);
-        holder.country.setText(country);
+        ObjectCountry country = countries.get(position);
+        holder.imageView.setImageResource(country.getImage());
+        holder.nameView.setText(country.getName());
     }
 
     @Override
@@ -39,10 +39,12 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        final TextView country;
+        final ImageView imageView;
+        final TextView nameView;
         ViewHolder(View view){
             super(view);
-            country = (Button) view.findViewById(R.id.country);
+            imageView = (ImageView)view.findViewById(R.id.image);
+            nameView = (TextView) view.findViewById(R.id.name);
         }
     }
 }

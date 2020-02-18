@@ -27,18 +27,13 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="20dp" />
-    <Button
-        android:id="@+id/button"
-        android:layout_width="110dp"
-        android:layout_height="52dp"
-        android:text="Countries"
-        android:onClick="openCountries" />
+
     <Button
         android:id="@+id/button2"
         android:layout_width="110dp"
         android:layout_height="52dp"
-        android:text="Countries2"
-        android:onClick="openCountries2" />
+        android:text="Countries"
+        android:onClick="openCountries" />
 
 
 

@@ -14,19 +14,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-
-
     public void openCountries(View view){
 
         Intent intent = new Intent(this, Countries.class);
-        startActivity(intent);
-
-    }
-
-
-    public void openCountries2(View view){
-
-        Intent intent = new Intent(this, Countries2.class);
         startActivity(intent);
 
     }

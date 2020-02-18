@@ -11,7 +11,7 @@ import java.util.List;
 
 public class Countries extends AppCompatActivity {
 
-    List<String> countries = new ArrayList<>();
+    List<ObjectCountry> objectCountries = new ArrayList<>();
     RecyclerView recyclerCountries;
 
 
@@ -20,34 +20,24 @@ public class Countries extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_countries);
 
-        fillCountriesTank();
-        recyclerCountries = findViewById(R.id.recycler_countries);
+        addObjectCountry();
+        recyclerCountries = findViewById(R.id.recycler_countries2);
         recyclerCountries.setLayoutManager(new LinearLayoutManager(this));
 
         // Создаем адаптер
-        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_countries);
-        DataAdapter adapter = new DataAdapter(this, countries);
+        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_countries2);
+        DataAdapter adapter2 = new DataAdapter(this, objectCountries);
         // Устанавливаем для списка адаптер
-        recyclerView.setAdapter(adapter);
+        recyclerView.setAdapter(adapter2);
 
     }
 
-    private void fillCountriesTank(){
-        countries.add("ИСПАНИЯ");
-        countries.add("ПОРТУГАЛИЯ");
-        countries.add("ГЕРМАНИЯ");
-        countries.add("РОССИЯ");
-        countries.add("ЧЕХИЯ");
-        countries.add("Test1");
-        countries.add("Test2");
-        countries.add("Test3");
-        countries.add("Test4");
-        countries.add("Test5");
-        countries.add("Test6");
-        countries.add("Test7");
-        countries.add("Test8");
-        countries.add("Test9");
-
+    private void addObjectCountry(){
+        objectCountries.add(new ObjectCountry("ИСПАНИЯ", R.drawable.image2));
+        objectCountries.add(new ObjectCountry("ПОРТУГАЛИЯ", R.drawable.image3));
+        objectCountries.add(new ObjectCountry("ГЕРМАНИЯ", R.drawable.image4));
+        objectCountries.add(new ObjectCountry("РОССИЯ", R.drawable.image5));
+        objectCountries.add(new ObjectCountry("ЧЕХИЯ", R.drawable.image6));
 
     }
 
