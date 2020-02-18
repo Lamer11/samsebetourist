@@ -29,7 +29,6 @@ public class Countries extends AppCompatActivity {
         DataAdapter adapter2 = new DataAdapter(this, objectCountries);
         // Устанавливаем для списка адаптер
         recyclerView.setAdapter(adapter2);
-
     }
 
     private void addObjectCountry(){
@@ -38,9 +37,7 @@ public class Countries extends AppCompatActivity {
         objectCountries.add(new ObjectCountry("ГЕРМАНИЯ", R.drawable.image4));
         objectCountries.add(new ObjectCountry("РОССИЯ", R.drawable.image5));
         objectCountries.add(new ObjectCountry("ЧЕХИЯ", R.drawable.image6));
-
     }
-
 
 
 }
