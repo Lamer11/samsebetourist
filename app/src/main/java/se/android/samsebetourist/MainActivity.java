@@ -22,4 +22,12 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
 
     }
+
+
+    public void openCountries2(View view){
+
+        Intent intent = new Intent(this, Countries2.class);
+        startActivity(intent);
+
+    }
 }

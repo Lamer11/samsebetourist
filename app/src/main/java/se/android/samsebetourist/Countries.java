@@ -11,8 +11,8 @@ import java.util.List;
 
 public class Countries extends AppCompatActivity {
 
-        List<String> listik = new ArrayList<>();
-        RecyclerView recyclerCountries;
+    List<String> countries = new ArrayList<>();
+    RecyclerView recyclerCountries;
 
 
     @Override
@@ -20,34 +20,35 @@ public class Countries extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_countries);
 
-
         fillCountriesTank();
         recyclerCountries = findViewById(R.id.recycler_countries);
         recyclerCountries.setLayoutManager(new LinearLayoutManager(this));
 
-        // создаем адаптер
+        // Создаем адаптер
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_countries);
-        DataAdapter adapter = new DataAdapter(this, listik);
-        // устанавливаем для списка адаптер
+        DataAdapter adapter = new DataAdapter(this, countries);
+        // Устанавливаем для списка адаптер
         recyclerView.setAdapter(adapter);
-
 
     }
 
-
     private void fillCountriesTank(){
-        listik.add("ИСПАНИЯ");
-        listik.add("ПОРТУГАЛИЯ");
-        listik.add("ГЕРМАНИЯ");
-        listik.add("РОССИЯ");
-        listik.add("ЧЕХИЯ");
-        listik.add("Spanish");
-        listik.add("Spanish");
-        listik.add("Spanish");
-        listik.add("Spanish");
-        listik.add("Spanish");
-        listik.add("Spanish");
-        listik.add("Spanish");
+        countries.add("ИСПАНИЯ");
+        countries.add("ПОРТУГАЛИЯ");
+        countries.add("ГЕРМАНИЯ");
+        countries.add("РОССИЯ");
+        countries.add("ЧЕХИЯ");
+        countries.add("Test1");
+        countries.add("Test2");
+        countries.add("Test3");
+        countries.add("Test4");
+        countries.add("Test5");
+        countries.add("Test6");
+        countries.add("Test7");
+        countries.add("Test8");
+        countries.add("Test9");
+
+
     }
 
 
