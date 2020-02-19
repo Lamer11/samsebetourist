@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,6 +38,14 @@ public class Countries extends AppCompatActivity {
         objectCountries.add(new ObjectCountry("ГЕРМАНИЯ", R.drawable.image4));
         objectCountries.add(new ObjectCountry("РОССИЯ", R.drawable.image5));
         objectCountries.add(new ObjectCountry("ЧЕХИЯ", R.drawable.image6));
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        // Тут можно определить логику что необходимо сделать, если
+        // пользователь нажал на системную кнопку "назад"
+        // Toast.makeText(this, "Countries", Toast.LENGTH_SHORT).show();
     }
 
 
