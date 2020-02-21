@@ -42,10 +42,16 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
         holder.linearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(mContext, AudioList.class);
+//                Intent intent = new Intent(mContext, AudioList.class);
+//                // передача объекта с ключом "nameCountry" и значением country.getName();
+//                intent.putExtra("nameCountry", nameCountry);
+//                mContext.startActivity(intent);
+
+                Intent intent = new Intent(mContext, Audiofiles.class);
                 // передача объекта с ключом "nameCountry" и значением country.getName();
                 intent.putExtra("nameCountry", nameCountry);
                 mContext.startActivity(intent);
+
             }
         });
     }

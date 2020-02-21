@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "759053482112",
+    "firebase_url": "https://samsebetourist-fe60b.firebaseio.com",
+    "project_id": "samsebetourist-fe60b",
+    "storage_bucket": "samsebetourist-fe60b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:759053482112:android:592c4c9761ac0e49cd0e65",
+        "android_client_info": {
+          "package_name": "se.android.samsebetourist"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "759053482112-rqsr2o0t90gu8fha2il88nm7hth36fe0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "se.android.samsebetourist",
+            "certificate_hash": "5f4aaa099890c3c66a8fa49c1bc521399aae16e8"
+          }
+        },
+        {
+          "client_id": "759053482112-jm85b617rlrdt4og93k0c8gtnjkn50vm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCBDZLNXH97unAHyjCm8UBKtvxBiFEMifE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "759053482112-jm85b617rlrdt4og93k0c8gtnjkn50vm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

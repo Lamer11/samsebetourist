@@ -10,7 +10,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    private final int SPLUSH_SCREEN_LENGHT = 1000;
+    private final int SPLUSH_SCREEN_LENGHT = 500;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
