@@ -44,9 +44,8 @@ public class Countries extends AppCompatActivity {
     public void onBackPressed() {
         super.onBackPressed();
         // Тут можно определить логику что необходимо сделать, если
-        // пользователь нажал на системную кнопку "назад"
+        // пользователь нажал на системную кнопку "назад".
         // Toast.makeText(this, "Countries", Toast.LENGTH_SHORT).show();
     }
-
 
 }
