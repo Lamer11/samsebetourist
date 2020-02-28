@@ -22,11 +22,11 @@ public class Countries extends AppCompatActivity {
         setContentView(R.layout.activity_countries);
 
         addObjectCountry();
-        recyclerCountries = findViewById(R.id.recycler_countries2);
+        recyclerCountries = findViewById(R.id.recycler_countries);
         recyclerCountries.setLayoutManager(new LinearLayoutManager(this));
 
         // Создаем адаптер
-        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_countries2);
+        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_countries);
         DataAdapter adapter2 = new DataAdapter(this, objectCountries);
         // Устанавливаем для списка адаптер
         recyclerView.setAdapter(adapter2);

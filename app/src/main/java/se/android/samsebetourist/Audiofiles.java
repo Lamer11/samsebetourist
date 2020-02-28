@@ -55,6 +55,7 @@ public class Audiofiles extends AppCompatActivity {
         Bundle passedValue = getIntent().getExtras(); // получаем переданные значения в переменную типа Bundle
         String nameCountry = passedValue.get("nameCountry").toString(); // По ключу "nameCountry" получаем значение
         country.setText(nameCountry);
+
     }
 
     public void download(){

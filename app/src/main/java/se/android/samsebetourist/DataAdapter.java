@@ -26,6 +26,7 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
         this.inflater = LayoutInflater.from(context);
         this.mContext = context;
     }
+
     @Override
     public DataAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
@@ -47,7 +48,12 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
 //                intent.putExtra("nameCountry", nameCountry);
 //                mContext.startActivity(intent);
 
-                Intent intent = new Intent(mContext, Audiofiles.class);
+//                Intent intent = new Intent(mContext, Audiofiles.class);
+//                // передача объекта с ключом "nameCountry" и значением country.getName();
+//                intent.putExtra("nameCountry", nameCountry);
+//                mContext.startActivity(intent);
+
+                Intent intent = new Intent(mContext, Audios.class);
                 // передача объекта с ключом "nameCountry" и значением country.getName();
                 intent.putExtra("nameCountry", nameCountry);
                 mContext.startActivity(intent);
@@ -61,15 +67,17 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
         return countries.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
-        final ImageView imageView;
-        final TextView nameView;
-        final LinearLayout linearLayout;
-        ViewHolder(View view){
-            super(view);
-            imageView = (ImageView)view.findViewById(R.id.image);
-            nameView = (TextView) view.findViewById(R.id.name);
-            linearLayout = (LinearLayout) view.findViewById(R.id.linear);
+
+        public class ViewHolder extends RecyclerView.ViewHolder {
+            final ImageView imageView;
+            final TextView nameView;
+            final LinearLayout linearLayout;
+            ViewHolder(View view){
+                super(view);
+                imageView = (ImageView)view.findViewById(R.id.image);
+                nameView = (TextView) view.findViewById(R.id.name);
+                linearLayout = (LinearLayout) view.findViewById(R.id.linear);
+            }
         }
-    }
+
 }

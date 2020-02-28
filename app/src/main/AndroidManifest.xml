@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="se.android.samsebetourist">
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/samsebetouristimage"
@@ -10,7 +11,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".Audiofiles"></activity>
+        <activity android:name=".Audios"></activity>
+        <activity android:name=".Audiofiles" />
         <activity android:name=".AudioList" />
         <activity android:name=".Countries" />
         <activity android:name=".MainActivity">
