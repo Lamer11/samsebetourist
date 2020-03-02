@@ -64,12 +64,14 @@ public class AudioItemAdapter extends RecyclerView.Adapter<AudioItemAdapter.View
             @Override
             public void onClick(View view) {
                 // here must be someone
+                Button b2 = (Button) view;
                 System.out.println("================================================================================");
                 System.out.println(nameAudio);
                 System.out.println(nameCountry);
                 System.out.println("================================================================================");
 
-                download(nameCountry, nameAudio);
+                download(nameCountry, nameAudio, view);
+
             }
         });
 
@@ -112,14 +114,14 @@ public class AudioItemAdapter extends RecyclerView.Adapter<AudioItemAdapter.View
 
 
     // Методы download и downloadFiles для загрузки файла на телефон
-    public void download(String country, final String audio){
+    public void download(String country, final String audio, final View view){
         storageReference = firebaseStorage.getInstance().getReference();
         ref = storageReference.child(country + "/" + audio + ".wav");
         ref.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
             @Override
             public void onSuccess(Uri uri) {
                 String url = uri.toString();
-                downloadFiles(mContext, audio, ".wav", DIRECTORY_DOWNLOADS, url);
+                downloadFiles(mContext, audio, ".wav", DIRECTORY_DOWNLOADS, url, view);
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
@@ -129,16 +131,26 @@ public class AudioItemAdapter extends RecyclerView.Adapter<AudioItemAdapter.View
         });
     }
 
-    public void downloadFiles(Context context, String fileName, String fileExtension, String destinationDirectory, String url){
+    public void downloadFiles(Context context, String fileName, String fileExtension, String destinationDirectory, String url, View view){
         DownloadManager downloadManager = (DownloadManager) context.getSystemService(Context.DOWNLOAD_SERVICE);
         Uri uri = Uri.parse(url);
+        Button button = (Button) view;
         DownloadManager.Request request = new DownloadManager.Request(uri);
 
         //request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_ONLY_COMPLETION);
         request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
         request.setDestinationInExternalFilesDir(context, destinationDirectory, fileName + fileExtension);
 
+        button.setText("Скачивается...");
+        button.setEnabled(false);
         downloadManager.enqueue(request);
+        /*
+        String test = "ACTION_DOWNLOAD_COMPLETE";
+        while(){
+
+        }
+
+         */
     }
 
     // Метод, который запускает прослушивание онлайн
