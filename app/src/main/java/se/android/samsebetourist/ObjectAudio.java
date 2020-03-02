@@ -2,16 +2,26 @@ package se.android.samsebetourist;
 
 public class ObjectAudio {
 
-    String nameAudio;
-    int runButton;
-    int downButton;
+    private String nameCountry;
+    private String nameAudio;
+    private int runButton;
+    private int downButton;
 
-    public ObjectAudio(String nameAudio, int runButton, int downButton) {
+    public ObjectAudio(String nameCountry, String nameAudio) {
         this.nameAudio = nameAudio;
+        this.nameCountry = nameCountry;
+    }
+
+
+    public ObjectAudio(String nameCountry, String nameAudio, int runButton, int downButton) {
+        this.nameAudio = nameAudio;
+        this.nameCountry = nameCountry;
         this.runButton = runButton;
         this.downButton = downButton;
     }
 
+
+    public void setNameCountry(String nameCountry) { this.nameCountry = nameCountry; }
 
     public void setNameAudio(String nameAudio) {
         this.nameAudio = nameAudio;
@@ -25,6 +35,11 @@ public class ObjectAudio {
         this.downButton = downButton;
     }
 
+
+
+    public String getNameCountry() {
+        return nameCountry;
+    }
 
     public String getNameAudio() {
         return nameAudio;

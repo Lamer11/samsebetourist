@@ -33,11 +33,13 @@ public class Countries extends AppCompatActivity {
     }
 
     private void addObjectCountry(){
-        objectCountries.add(new ObjectCountry("ИСПАНИЯ", R.drawable.image2));
-        objectCountries.add(new ObjectCountry("ПОРТУГАЛИЯ", R.drawable.image3));
-        objectCountries.add(new ObjectCountry("ГЕРМАНИЯ", R.drawable.image4));
-        objectCountries.add(new ObjectCountry("РОССИЯ", R.drawable.image5));
-        objectCountries.add(new ObjectCountry("ЧЕХИЯ", R.drawable.image6));
+        objectCountries.add(new ObjectCountry("Испания", R.drawable.image2));
+        objectCountries.add(new ObjectCountry("Португалия", R.drawable.image3));
+        objectCountries.add(new ObjectCountry("Германия", R.drawable.image4));
+        objectCountries.add(new ObjectCountry("Россия", R.drawable.image5));
+        objectCountries.add(new ObjectCountry("Чехия", R.drawable.image6));
+        objectCountries.add(new ObjectCountry("test", 0));
+
     }
 
     @Override

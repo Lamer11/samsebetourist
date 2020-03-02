@@ -48,21 +48,25 @@ public class Audios extends AppCompatActivity {
 
     private void addObjectAudio(){
         switch (nameCountry){
-            case "ГЕРМАНИЯ" :
+            case "Германия" :
                 break;
-            case "ИСПАНИЯ" :
-                objectAudios.add(new ObjectAudio("Башни Серранос.wav", 0, 0));
-                objectAudios.add(new ObjectAudio("Валенсия1 Церковь святого Николая.wav", 0, 0));
-                objectAudios.add(new ObjectAudio("Валенсия2.wav", 0, 0));
-                objectAudios.add(new ObjectAudio("Маркиза де ла скала.wav", 0, 0));
-                objectAudios.add(new ObjectAudio("Монастырь дель Кармен.wav", 0, 0));
+            case "Испания" :
+                objectAudios.add(new ObjectAudio(nameCountry, "Башни Серранос"));
+                objectAudios.add(new ObjectAudio(nameCountry, "Валенсия1 Церковь святого Николая"));
+                objectAudios.add(new ObjectAudio(nameCountry, "Валенсия2"));
+                objectAudios.add(new ObjectAudio(nameCountry, "Маркиза де ла скала"));
+                objectAudios.add(new ObjectAudio(nameCountry, "Монастырь дель Кармен"));
                 break;
-            case "ПОРТУГАЛИЯ" :
+            case "Португалия" :
                 break;
-            case "РОССИЯ" :
-                objectAudios.add(new ObjectAudio("дворец правительства.wav", 0, 0));
+            case "Россия" :
+                objectAudios.add(new ObjectAudio(nameCountry, "дворец правительства"));
                 break;
-            case "ЧЕХИЯ" :
+            case "Чехия" :
+                break;
+            case "test" :
+                objectAudios.add(new ObjectAudio(nameCountry, "simpletext"));
+                objectAudios.add(new ObjectAudio(nameCountry, "myphoto"));
                 break;
         }
 
