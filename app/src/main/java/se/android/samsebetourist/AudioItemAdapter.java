@@ -76,7 +76,11 @@ public class AudioItemAdapter extends RecyclerView.Adapter<AudioItemAdapter.View
         holder.runButoon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                System.out.println("================================================================================");
+                System.out.println(nameAudio);
+                System.out.println(nameCountry);
+                System.out.println("================================================================================");
+                runAudio(nameCountry, nameAudio);
             }
         });
 
@@ -153,6 +157,9 @@ public class AudioItemAdapter extends RecyclerView.Adapter<AudioItemAdapter.View
                 }catch (Exception e){
                     // Обработка ошибки
                 }
+                System.out.println("=======================================================================");
+                System.out.println("Перед методом старт");
+                System.out.println("=======================================================================");
                 mediaPlayer.start();
             }
         }).addOnFailureListener(new OnFailureListener() {
