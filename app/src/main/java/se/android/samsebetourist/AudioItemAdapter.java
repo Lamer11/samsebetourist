@@ -2,8 +2,12 @@ package se.android.samsebetourist;
 
 
 import android.app.DownloadManager;
+import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
+import android.database.Cursor;
+import android.database.CursorIndexOutOfBoundsException;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.net.Uri;
@@ -41,6 +45,31 @@ public class AudioItemAdapter extends RecyclerView.Adapter<AudioItemAdapter.View
 
     StorageReference ref;
 
+
+    private long downloadID;
+    Button downButtom;
+
+    private BroadcastReceiver onDownloadComplete = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            String action = intent.getAction();
+            System.out.println("================================================================================");
+            System.out.println("action: " + action);
+            System.out.println("================================================================================");
+            //Fetching the download id received with the broadcast
+            long id = intent.getLongExtra(DownloadManager.EXTRA_DOWNLOAD_ID, -1);
+            //Checking if the received broadcast is for our enqueued download by matching download id
+            if (downloadID == id) {
+                //Toast.makeText(context, "Download Completed", Toast.LENGTH_SHORT).show();
+
+                downButtom.setText("Download");
+                downButtom.setEnabled(true);
+
+            }
+        }
+    };
+
+
     AudioItemAdapter(Context context, List<ObjectAudio> audios) {
         this.audios = audios;
         this.inflater = LayoutInflater.from(context);
@@ -60,21 +89,18 @@ public class AudioItemAdapter extends RecyclerView.Adapter<AudioItemAdapter.View
         final String nameCountry = audio.getNameCountry(); // название страны
         holder.textView.setText(audio.getNameAudio());
         // Устанавливаем события на кнопки
+        // Кнопка скачивания аудио
         holder.downButoon.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                // here must be someone
-                Button b2 = (Button) view;
-                System.out.println("================================================================================");
-                System.out.println(nameAudio);
-                System.out.println(nameCountry);
-                System.out.println("================================================================================");
-
+                downButtom = (Button) view;
                 download(nameCountry, nameAudio, view);
+                mContext.registerReceiver(onDownloadComplete,new IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE));
 
             }
         });
 
+        // Кнопка запуска аудио
         holder.runButoon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -143,14 +169,8 @@ public class AudioItemAdapter extends RecyclerView.Adapter<AudioItemAdapter.View
 
         button.setText("Скачивается...");
         button.setEnabled(false);
-        downloadManager.enqueue(request);
-        /*
-        String test = "ACTION_DOWNLOAD_COMPLETE";
-        while(){
+        downloadID = downloadManager.enqueue(request);
 
-        }
-
-         */
     }
 
     // Метод, который запускает прослушивание онлайн
