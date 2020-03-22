@@ -65,6 +65,8 @@ public class AudioItemAdapter extends RecyclerView.Adapter<AudioItemAdapter.View
                 downButtom.setText("Download");
                 downButtom.setEnabled(true);
 
+                //mContext.unregisterReceiver(this); // вроде как способ тут выключать, а е в методе close() ???
+
             }
         }
     };
