@@ -10,7 +10,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    private final int SPLUSH_SCREEN_LENGHT = 500;
+    private final int SPLUSH_SCREEN_LENGHT = 2000; // секунд заставки
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent mainIntent = new Intent(MainActivity.this, Countries.class);
+                Intent mainIntent = new Intent(MainActivity.this, Main_menu.class);
                 MainActivity.this.startActivity(mainIntent);
                 MainActivity.this.finish();
             }

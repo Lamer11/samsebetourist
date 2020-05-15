@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Main_menu">
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="411dp"
+        android:layout_height="100dp"
+        android:background="@drawable/yellow_panels"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:background="@drawable/yellow_panels"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+
+        <ImageButton
+            android:id="@+id/icon_home"
+            android:layout_width="100dp"
+            android:layout_height="80dp"
+            android:background="#008A2929"
+            android:cropToPadding="false"
+            android:padding="10sp"
+            android:scaleType="fitCenter"
+            android:visibility="visible"
+            app:srcCompat="@drawable/icon_home"
+            tools:visibility="visible"
+            android:onClick="iconHome"/>
+
+        <ImageButton
+            android:id="@+id/icon_tour"
+            android:layout_width="100dp"
+            android:layout_height="80dp"
+            android:background="#00FFFFFF"
+            android:padding="10sp"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/icon_tour"
+            android:onClick="iconTour"/>
+
+        <ImageButton
+            android:id="@+id/icon_maps"
+            android:layout_width="100dp"
+            android:layout_height="80dp"
+            android:background="#00FFFFFF"
+            android:padding="10sp"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/icon_maps"
+            android:onClick="iconMaps"/>
+
+        <ImageButton
+            android:id="@+id/icon_camera"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#00FFFFFF"
+            android:padding="10sp"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/icon_camera"
+            android:onClick="iconCamera"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="100dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="100dp"
+        android:text="Countries"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

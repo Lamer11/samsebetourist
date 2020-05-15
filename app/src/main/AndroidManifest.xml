@@ -14,7 +14,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".Audios"></activity>
+        <activity android:name=".Main_menu" />
+        <activity android:name=".Audios" />
         <activity android:name=".Audiofiles" />
         <activity android:name=".AudioList" />
         <activity android:name=".Countries" />
